@@ -6,15 +6,33 @@
     <style>
         body {background-color: white}
         p {color: white;}
+        div {color:white}
     </style>
     <body>
         <h2>You're in the right place, but do you know where to look?</h2>
 
-
-
-        <p id="demo" style="display:none">CTF{H1dd3nM3ss@g3_InPl@inS1ght!}
+        <p id="demo" style="display:none">
+            
+            Q1RGe0gxZGQzbk0zc3NAZzNfSW5QbEBpblMxZ2h0IX0=
         </p>
-
-        <button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me!</button>
+    
+        <button type="button" onclick="showFlag()">Click Me!</button>
+    
+        <div id="flagDisplay" style="display:none; margin-top: 20px; font-size: 20px; font-weight: bold;;"></div>
+        <script>
+            
+            function showFlag() {
+                
+                let encodedFlag = document.getElementById('demo').innerText.trim();
+                
+                
+                let decodedFlag = atob(encodedFlag);
+                
+                
+                document.getElementById('flagDisplay').style.display = 'block';
+                document.getElementById('flagDisplay').innerText = decodedFlag;
+            }
+        </script>    
+       
     </body>
 </html>
